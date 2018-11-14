@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Mi indice</title>
+        <script src="../Resources/Angular/angular.js" type="text/javascript"></script>
+        <script src="../Resources/JS/AppController.js" type="text/javascript"></script>
+    </head>
+    <body>
+        <div ng-app="myApp" ng-controller="PersonController">
+            <h1>Hello</h1>
+            <table id="mytable" class="table table-bordred table-striped">
+                <tr>
+                    <th>ID</th>
+                    <th>Name</th>
+                    <th>Last Name</th>
+                </tr>
+                <tbody>
+                    <tr ng-repeat="item in ListOfUsers">
+                        <td>{{`{{item.Id}}`}}</td>
+                        <td>{{`{{item.name}}`}}</td>
+                        <td>{{`{{item.lastName}}`}}</td>
+                    </tr>
+                </tbody>
+            </table>
+            <div class="table-responsive">
+                    <div class="form-group">
+                        <label for="add-firstname" class="col-sm-2 control-label">Nick</label>
+                            <div class="col-sm-10">
+                                <input type="text" class="form-control" id="insert-Name" name="Name" placeholder="Name"
+                                ng-model="Name" required>
+                            </div>
+                    </div>
+                    <div class="form-group">
+                            <label for="add-firstname" class="col-sm-2 control-label">Password</label>
+                            <div class="col-sm-10">
+                                <input type="text" class="form-control" id="insert-LastName" name="LastName" placeholder="Last Name"
+                                ng-model="LastName" required>
+                            </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="add-Id" class="col-sm-2 control-label">Id</label>
+                        <div class="col-sm-10">
+                            <input type="text" class="form-control" id="Id" name="Id" placeholder="Id"
+                            ng-model="Id" required>
+                        </div>
+                    </div>
+                    <button type="button" class="btn btn-default" ng-click="Insert()">Add</button>
+                    <button type="button" class="btn btn-default" ng-click="Edit()">Edit</button>
+                    <button type="button" class="btn btn-default" ng-click="Delete()">Delete</button>
+            </div>
+        </div>
+
+    </body>
+</html>
